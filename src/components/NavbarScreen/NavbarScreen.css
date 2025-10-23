@@ -1,0 +1,136 @@
+.logo {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: aqua;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.menu-style>a {
+    padding-right: 20px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.logout-style {
+    padding-right: 20px;
+}
+
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+/* Sticky navbar with subtle backdrop */
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(180%) blur(6px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive visibility */
+/* Default: assume desktop styles off until breakpoints apply */
+.desktop-nav { display: none; }
+.mobile-nav-trigger { display: none; }
+.desktop-only { display: none; }
+
+/* Mobile and tablets (<=1023px): show hamburger, hide desktop items */
+@media (max-width: 1023.98px) {
+  .mobile-nav-trigger { display: inline-flex !important; }
+  .desktop-nav { display: none !important; }
+  .desktop-only { display: none !important; }
+}
+
+/* Desktop (>=1024px): hide hamburger, show desktop items */
+@media (min-width: 1024px) {
+  .desktop-nav { display: flex !important; }
+  .mobile-nav-trigger { display: none !important; }
+  .desktop-only { display: inline-flex !important; }
+}
+
+/* Minor tweaks on very small screens */
+@media (max-width: 360px) {
+  .navbar-title {
+    font-size: 1rem;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.sign-in-btn {
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* CSS */
+.button-21 {
+    align-items: center;
+    appearance: none;
+    background-color: #3EB2FD;
+    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    border-radius: 100px;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: CircularStd, sans-serif;
+    font-size: 1rem;
+    height: auto;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 3px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s, background-position .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.button-21:active,
+.button-21:focus {
+    outline: none;
+}
+
+.button-21:hover {
+    background-position: -20px -20px;
+}
+
+.button-21:focus:not(:active) {
+    box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+/* Active tab styling */
+.active-link {
+    color: #137fec;
+    /* brand blue */
+    font-weight: 600;
+    /* underline effect */
+    padding-bottom: 2px;
+    text-decoration: none;
+}

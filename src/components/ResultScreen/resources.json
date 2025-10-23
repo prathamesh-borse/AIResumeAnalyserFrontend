@@ -1,0 +1,387 @@
+{
+    "Java": [
+        {
+            "title": "Java Programming Basics",
+            "description": "Learn the basics of Java programming language.",
+            "url": "https://www.w3schools.com/java/"
+        },
+        {
+            "title": "Java Tutorial for Beginners",
+            "description": "Step-by-step tutorials for Java programming.",
+            "url": "https://www.javatpoint.com/java-tutorial"
+        }
+    ],
+    "Spring Boot": [
+        {
+            "title": "Spring Boot Official Guide",
+            "description": "Comprehensive guide to Spring Boot framework.",
+            "url": "https://spring.io/guides"
+        },
+        {
+            "title": "Spring Boot Tutorials by Baeldung",
+            "description": "In-depth tutorials for Spring Boot, REST APIs, and microservices.",
+            "url": "https://www.baeldung.com/spring-boot"
+        }
+    ],
+    "Hibernate": [
+        {
+            "title": "Hibernate ORM Documentation",
+            "description": "Official Hibernate ORM reference and tutorials.",
+            "url": "https://hibernate.org/orm/documentation/"
+        },
+        {
+            "title": "Hibernate Tutorial",
+            "description": "Step-by-step guide to learn Hibernate ORM.",
+            "url": "https://www.baeldung.com/hibernate-5"
+        }
+    ],
+    "MySQL": [
+        {
+            "title": "MySQL Tutorial",
+            "description": "Comprehensive MySQL tutorial for beginners and advanced users.",
+            "url": "https://www.mysqltutorial.org/"
+        }
+    ],
+    "PostgreSQL": [
+        {
+            "title": "PostgreSQL Tutorial",
+            "description": "Learn PostgreSQL database from basics to advanced topics.",
+            "url": "https://www.postgresqltutorial.com/"
+        }
+    ],
+    "REST API": [
+        {
+            "title": "RESTful API Tutorial",
+            "description": "Learn the basics of RESTful APIs.",
+            "url": "https://restfulapi.net/"
+        }
+    ],
+    "Docker": [
+        {
+            "title": "Play with Docker",
+            "description": "Interactive playground to learn and experiment with Docker.",
+            "url": "https://labs.play-with-docker.com/"
+        },
+        {
+            "title": "Docker Docs",
+            "description": "Official Docker documentation.",
+            "url": "https://docs.docker.com/"
+        }
+    ],
+    "Microservices": [
+        {
+            "title": "Microservices Architecture Guide",
+            "description": "Learn how to design and implement microservices.",
+            "url": "https://martinfowler.com/articles/microservices.html"
+        },
+        {
+            "title": "Building Microservices with Spring Boot",
+            "description": "Hands-on guide for building microservices using Spring Boot.",
+            "url": "https://www.baeldung.com/spring-boot-microservices"
+        }
+    ],
+    "Git": [
+        {
+            "title": "Git Official Documentation",
+            "description": "Learn Git version control system.",
+            "url": "https://git-scm.com/doc"
+        },
+        {
+            "title": "Learn Git Branching",
+            "description": "Interactive tutorial for Git.",
+            "url": "https://learngitbranching.js.org/"
+        }
+    ],
+    "Maven": [
+        {
+            "title": "Maven Tutorial",
+            "description": "Comprehensive guide to Maven build automation.",
+            "url": "https://maven.apache.org/guides/"
+        }
+    ],
+    "JavaScript": [
+        {
+            "title": "JavaScript Guide",
+            "description": "Comprehensive guide to JavaScript programming.",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+        },
+        {
+            "title": "JavaScript Info",
+            "description": "Detailed tutorials and explanations on modern JavaScript.",
+            "url": "https://javascript.info/"
+        }
+    ],
+    "React JS": [
+        {
+            "title": "React Docs",
+            "description": "Official React documentation and tutorials.",
+            "url": "https://react.dev/"
+        },
+        {
+            "title": "Full React Tutorial for Beginners",
+            "description": "Step-by-step React tutorials including projects.",
+            "url": "https://www.freecodecamp.org/news/learn-react-beginner-handbook/"
+        }
+    ],
+    "HTML": [
+        {
+            "title": "HTML Tutorial",
+            "description": "Learn the basics of HTML.",
+            "url": "https://www.w3schools.com/html/"
+        }
+    ],
+    "CSS": [
+        {
+            "title": "CSS Tutorial",
+            "description": "Learn the basics of CSS.",
+            "url": "https://www.w3schools.com/css/"
+        }
+    ],
+    "Redux": [
+        {
+            "title": "Redux Official Documentation",
+            "description": "Learn Redux for state management in React applications.",
+            "url": "https://redux.js.org/introduction/getting-started"
+        }
+    ],
+    "TypeScript": [
+        {
+            "title": "TypeScript Documentation",
+            "description": "Comprehensive guide to TypeScript programming language.",
+            "url": "https://www.typescriptlang.org/docs/"
+        }
+    ],
+    "Bootstrap": [
+        {
+            "title": "Bootstrap Docs",
+            "description": "Learn responsive front-end development with Bootstrap.",
+            "url": "https://getbootstrap.com/docs/5.0/getting-started/introduction/"
+        }
+    ],
+    "Tailwind CSS": [
+        {
+            "title": "Tailwind CSS Docs",
+            "description": "Official documentation for Tailwind CSS.",
+            "url": "https://tailwindcss.com/docs"
+        }
+    ],
+    "Node JS": [
+        {
+            "title": "Node.js Docs",
+            "description": "Official Node.js documentation.",
+            "url": "https://nodejs.org/en/docs/"
+        },
+        {
+            "title": "Node.js Tutorial for Beginners",
+            "description": "Hands-on guide to building Node.js applications.",
+            "url": "https://www.w3schools.com/nodejs/"
+        }
+    ],
+    "MongoDB": [
+        {
+            "title": "MongoDB University",
+            "description": "Official MongoDB courses and tutorials.",
+            "url": "https://university.mongodb.com/"
+        }
+    ],
+    "Python": [
+        {
+            "title": "Python Official Documentation",
+            "description": "Comprehensive guide to Python programming language.",
+            "url": "https://docs.python.org/3/"
+        },
+        {
+            "title": "Python for Data Science",
+            "description": "Learn Python with practical examples for data science.",
+            "url": "https://www.datacamp.com/courses/intro-to-python-for-data-science"
+        }
+    ],
+    "Machine Learning": [
+        {
+            "title": "Machine Learning by Andrew Ng",
+            "description": "Coursera course for learning machine learning concepts.",
+            "url": "https://www.coursera.org/learn/machine-learning"
+        }
+    ],
+    "Deep Learning": [
+        {
+            "title": "Deep Learning Specialization",
+            "description": "In-depth deep learning courses by Andrew Ng.",
+            "url": "https://www.coursera.org/specializations/deep-learning"
+        }
+    ],
+    "TensorFlow": [
+        {
+            "title": "TensorFlow Tutorials",
+            "description": "Official tutorials and guides for TensorFlow.",
+            "url": "https://www.tensorflow.org/tutorials"
+        }
+    ],
+    "PyTorch": [
+        {
+            "title": "PyTorch Tutorials",
+            "description": "Official PyTorch tutorials for deep learning.",
+            "url": "https://pytorch.org/tutorials/"
+        }
+    ],
+    "NumPy": [
+        {
+            "title": "NumPy Documentation",
+            "description": "Official NumPy tutorials and reference.",
+            "url": "https://numpy.org/doc/"
+        }
+    ],
+    "Pandas": [
+        {
+            "title": "Pandas Documentation",
+            "description": "Official guide to using Pandas for data analysis.",
+            "url": "https://pandas.pydata.org/docs/"
+        }
+    ],
+    "Matplotlib": [
+        {
+            "title": "Matplotlib Documentation",
+            "description": "Official guide to Matplotlib for data visualization.",
+            "url": "https://matplotlib.org/stable/contents.html"
+        }
+    ],
+    "Linux": [
+        {
+            "title": "Linux Journey",
+            "description": "Learn Linux basics and advanced commands.",
+            "url": "https://linuxjourney.com/"
+        }
+    ],
+    "Kubernetes": [
+        {
+            "title": "Kubernetes Official Documentation",
+            "description": "Comprehensive guide to Kubernetes container orchestration.",
+            "url": "https://kubernetes.io/docs/home/"
+        }
+    ],
+    "Jenkins": [
+        {
+            "title": "Jenkins Docs",
+            "description": "Learn CI/CD with Jenkins.",
+            "url": "https://www.jenkins.io/doc/"
+        }
+    ],
+    "Terraform": [
+        {
+            "title": "Terraform Documentation",
+            "description": "Official Terraform tutorials and guides.",
+            "url": "https://developer.hashicorp.com/terraform/docs"
+        }
+    ],
+    "Ansible": [
+        {
+            "title": "Ansible Docs",
+            "description": "Official Ansible documentation and tutorials.",
+            "url": "https://docs.ansible.com/"
+        }
+    ],
+    "CI/CD": [
+        {
+            "title": "CI/CD Concepts",
+            "description": "Learn Continuous Integration and Continuous Delivery.",
+            "url": "https://www.redhat.com/en/topics/devops/what-is-ci-cd"
+        }
+    ],
+    "Bash Scripting": [
+        {
+            "title": "Bash Guide",
+            "description": "Learn Bash scripting for Linux automation.",
+            "url": "https://tldp.org/LDP/Bash-Beginners-Guide/html/"
+        }
+    ],
+    "Kotlin": [
+        {
+            "title": "Kotlin Documentation",
+            "description": "Comprehensive guide to Kotlin programming language.",
+            "url": "https://kotlinlang.org/docs/home.html"
+        }
+    ],
+    "Android": [
+        {
+            "title": "Android Developers Guide",
+            "description": "Official Android development documentation.",
+            "url": "https://developer.android.com/docs"
+        }
+    ],
+    "Swift": [
+        {
+            "title": "Swift Documentation",
+            "description": "Comprehensive guide to Swift programming language.",
+            "url": "https://swift.org/documentation/"
+        }
+    ],
+    "iOS": [
+        {
+            "title": "iOS Developer Library",
+            "description": "Apple's official guide for iOS app development.",
+            "url": "https://developer.apple.com/documentation/"
+        }
+    ],
+    "Flutter": [
+        {
+            "title": "Flutter Documentation",
+            "description": "Official Flutter guide and tutorials for mobile apps.",
+            "url": "https://docs.flutter.dev/"
+        }
+    ],
+    "React Native": [
+        {
+            "title": "React Native Docs",
+            "description": "Official documentation for building React Native apps.",
+            "url": "https://reactnative.dev/docs/getting-started"
+        }
+    ],
+    "UI/UX Design": [
+        {
+            "title": "Free UX Design Courses",
+            "description": "Learn UI/UX design from beginner to advanced.",
+            "url": "https://www.coursera.org/browse/arts-and-humanities/ux-design"
+        }
+    ],
+    "DevOps": [
+        {
+            "title": "Introduction to DevOps",
+            "description": "Learn the fundamentals of DevOps culture and practices.",
+            "url": "https://www.edx.org/course/introduction-to-devops-transforming-and-improving"
+        },
+        {
+            "title": "DevOps Tutorial for Beginners",
+            "description": "Comprehensive DevOps tutorials including tools and workflows.",
+            "url": "https://www.javatpoint.com/devops-tutorial"
+        }
+    ],
+    "Ci cd": [
+        {
+            "title": "CI/CD Concepts",
+            "description": "Learn Continuous Integration and Continuous Delivery.",
+            "url": "https://www.redhat.com/en/topics/devops/what-is-ci-cd"
+        },
+        {
+            "title": "CI/CD with Jenkins",
+            "description": "Step-by-step guide to implementing CI/CD pipelines using Jenkins.",
+            "url": "https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/"
+        },
+        {
+            "title": "CI/CD with GitHub Actions",
+            "description": "Learn how to automate workflows and CI/CD pipelines using GitHub Actions.",
+            "url": "https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions"
+        }
+    ],
+    "Spring MVC": [
+        {
+            "title": "Spring MVC Tutorial",
+            "description": "Comprehensive guide to Spring MVC framework for web applications.",
+            "url": "https://www.javatpoint.com/spring-mvc-tutorial"
+        },
+        {
+            "title": "Spring MVC Official Documentation",
+            "description": "Official reference guide for Spring MVC framework.",
+            "url": "https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc"
+        }
+    ]
+}

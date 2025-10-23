@@ -1,0 +1,27 @@
+/* Ensure html, body, root take full height */
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content should grow to push footer down */
+.app-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer styling */
+.app-footer {
+    padding: 20px;
+    text-align: center;
+    color: #555;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+    /* ensures footer stays at bottom */
+}

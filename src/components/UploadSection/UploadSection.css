@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8fafc;
+    /* Lighter background color */
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 125px);
+    /* Adjust based on Navbar/Footer height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    max-width: 1000px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.header-text {
+    margin-bottom: 24px;
+}
+
+.header-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 8px;
+}
+
+.header-text p {
+    font-size: 1rem;
+    color: #718096;
+    margin: 0;
+}
+
+.file-drop-area {
+    position: relative;
+    border: 2px dashed #e2e8f0;
+    border-radius: 8px;
+    padding: 24px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    margin-bottom: 24px;
+    min-height: 35vh;
+    box-sizing: border-box;
+}
+
+.file-drop-area:hover {
+    border-color: #a0aec0;
+    background-color: #f7fafc;
+}
+
+.file-drop-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+}
+
+.file-drop-text {
+    font-size: 1rem;
+    color: #4a5568;
+    font-weight: 500;
+    margin: 0;
+}
+
+.file-drop-text-or {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 8px 0;
+}
+
+.file-input {
+    display: none;
+    /* Hide the default file input */
+}
+
+.upload-button {
+    background-color: transparent;
+    color: #3182ce;
+    border: 1px solid #3182ce;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upload-button:hover {
+    background-color: #e6f6ff;
+}
+
+.file-name-display {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2d3748;
+    box-sizing: border-box;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #a0aec0;
+}
+
+.input-help-text {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 8px;
+}
+
+.analyze-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #3182ce;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.analyze-button:hover {
+    background-color: #2c5282;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    /* or rgba(255,255,255,0.9) for transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /* ensures it covers footer and navbar */
+}
+
+.job-description-parent {
+    margin: 8px 0 24px;
+}
+
+#jobdescriptionarea {
+    height: 35vh;
+    position: relative;
+    border: 2px dashed #e2e8f0;
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 24px;
+    min-height: 35vh;
+    box-sizing: border-box;
+}
+
+/* Prevent shrinking and overflow in both panels */
+.job-description-area,
+.file-drop-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 899px) {
+    .file-drop-area {
+        min-height: 240px;
+    }
+
+    .job-description-area {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 640px) {
+    #jobdescriptionarea {
+        width: 350px;
+    }
+
+    .file-drop-area {
+        width: 350px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+    #jobdescriptionarea {
+        width: 500px;
+    }
+
+    .file-drop-area {
+        width: 500px;
+    }
+}
+
+@media (min-width: 1008px) {
+    #jobdescriptionarea {
+        width: 700px;
+    }
+
+    .file-drop-area {
+        width: 700px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #jobdescriptionarea {
+        width: 350px;
+        height: 37vh;
+    }
+
+    .file-drop-area {
+        width: 360px;
+    }
+}
