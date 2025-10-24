@@ -67,8 +67,6 @@ function UploadSection({ onAnalyze, setLoading }) {
     }
   };
 
-  console.log("Email: ", localStorage.getItem("email"));
-
   return (
     <div>
       <Navbar />
