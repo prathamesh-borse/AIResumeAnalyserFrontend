@@ -262,6 +262,17 @@ body {
     }
 }
 
+@media (min-width: 390px) and (max-width: 640px) {
+    #jobdescriptionarea {
+        width: 250px;
+        height: 37vh;
+    }
+
+    .file-drop-area {
+        width: 250px;
+    }
+}
+
 @media (min-width: 1200px) {
     #jobdescriptionarea {
         width: 350px;
