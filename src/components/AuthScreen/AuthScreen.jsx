@@ -80,7 +80,11 @@ export default function AuthScreen({ mode = "login" }) {
               <Typography variant="h5" fontWeight={700} textAlign="center">
                 {isLogin ? "Welcome Back" : "Create an Account"}
               </Typography>
-              <Typography variant="body2" color="text.secondary" textAlign="center">
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                textAlign="center"
+              >
                 {isLogin
                   ? "Login to analyze your resume and skills."
                   : "Sign up to get personalized role recommendations."}
@@ -119,11 +123,22 @@ export default function AuthScreen({ mode = "login" }) {
                     size="large"
                     disabled={submitting}
                   >
-                    {submitting ? (isLogin ? "Logging in..." : "Creating account...") : isLogin ? "Login" : "Register"}
+                    {submitting
+                      ? isLogin
+                        ? "Logging in..."
+                        : "Creating account..."
+                      : isLogin
+                      ? "Login"
+                      : "Register"}
                   </Button>
                 </Stack>
               </form>
-              <Stack direction="row" spacing={1} justifyContent="center" alignItems="center">
+              <Stack
+                direction="row"
+                spacing={1}
+                justifyContent="center"
+                alignItems="center"
+              >
                 <Typography variant="body2" color="text.secondary">
                   {isLogin ? "Don’t have an account?" : "Already registered?"}
                 </Typography>
@@ -141,7 +156,12 @@ export default function AuthScreen({ mode = "login" }) {
         onClose={() => setShowError(false)}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert onClose={() => setShowError(false)} severity="error" variant="filled" sx={{ width: "100%" }}>
+        <Alert
+          onClose={() => setShowError(false)}
+          severity="error"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
           {error}
         </Alert>
       </Snackbar>
