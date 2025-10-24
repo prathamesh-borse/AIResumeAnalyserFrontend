@@ -2,8 +2,25 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
 import "./NavbarScreen.css";
-import { IconButton, Drawer, List, ListItemButton, ListItemText, Divider, Box, ListItemIcon, Button } from "@mui/material";
-import { Logout, Menu as MenuIcon, Home, Info, ContactPage, Assessment } from "@mui/icons-material";
+import {
+  IconButton,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemText,
+  Divider,
+  Box,
+  ListItemIcon,
+  Button,
+} from "@mui/material";
+import {
+  Logout,
+  Menu as MenuIcon,
+  Home,
+  Info,
+  ContactPage,
+  Assessment,
+} from "@mui/icons-material";
 
 export default function Navbar() {
   const location = useLocation();
@@ -87,11 +104,18 @@ export default function Navbar() {
       {/* Actions */}
       <div className="flex items-center gap-4 logout-style">
         {/* Mobile hamburger */}
-        <IconButton className="mobile-nav-trigger" aria-label="menu" onClick={toggleMobile(true)}>
+        <IconButton
+          className="mobile-nav-trigger"
+          aria-label="menu"
+          onClick={toggleMobile(true)}
+        >
           <MenuIcon />
         </IconButton>
         {!auth.token ? (
-          <button className="button-21 desktop-only" onClick={handleNavigateToAuthScreen}>
+          <button
+            className="button-21 desktop-only"
+            onClick={handleNavigateToAuthScreen}
+          >
             Get Started
           </button>
         ) : (
@@ -101,7 +125,11 @@ export default function Navbar() {
               alt="User"
               className="profile-avatar desktop-only"
             />
-            <IconButton aria-label="Logout" onClick={handleLogout} className="logout-btn desktop-only">
+            <IconButton
+              aria-label="Logout"
+              onClick={handleLogout}
+              className="logout-btn desktop-only"
+            >
               <Logout />
             </IconButton>
           </>
@@ -110,33 +138,59 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={mobileOpen} onClose={toggleMobile(false)}>
-        <Box sx={{ width: 260 }} role="presentation" onClick={toggleMobile(false)} onKeyDown={toggleMobile(false)}>
+        <Box
+          sx={{ width: 260 }}
+          role="presentation"
+          onClick={toggleMobile(false)}
+          onKeyDown={toggleMobile(false)}
+        >
           <List>
-            <ListItemButton onClick={() => navigate("/")}> 
-              <ListItemIcon><Home /></ListItemIcon>
+            <ListItemButton onClick={() => navigate("/")}>
+              <ListItemIcon>
+                <Home />
+              </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItemButton>
             {isResultsScreen && (
               <ListItemButton onClick={() => navigate("/results")}>
-                <ListItemIcon><Assessment /></ListItemIcon>
+                <ListItemIcon>
+                  <Assessment />
+                </ListItemIcon>
                 <ListItemText primary="Resume Analysis" />
               </ListItemButton>
             )}
-            <ListItemButton onClick={() => navigate("/about")}> 
-              <ListItemIcon><Info /></ListItemIcon>
+            <ListItemButton onClick={() => navigate("/about")}>
+              <ListItemIcon>
+                <Info />
+              </ListItemIcon>
               <ListItemText primary="About" />
             </ListItemButton>
-            <ListItemButton onClick={() => navigate("/contact")}> 
-              <ListItemIcon><ContactPage /></ListItemIcon>
+            <ListItemButton onClick={() => navigate("/contact")}>
+              <ListItemIcon>
+                <ContactPage />
+              </ListItemIcon>
               <ListItemText primary="Contact" />
             </ListItemButton>
           </List>
           <Divider />
           <Box sx={{ p: 2 }}>
             {!auth.token ? (
-              <Button fullWidth variant="contained" onClick={handleNavigateToAuthScreen}>Get Started</Button>
+              <Button
+                fullWidth
+                variant="contained"
+                onClick={handleNavigateToAuthScreen}
+              >
+                Get Started
+              </Button>
             ) : (
-              <Button fullWidth variant="outlined" startIcon={<Logout />} onClick={handleLogout}>Logout</Button>
+              <Button
+                fullWidth
+                variant="outlined"
+                startIcon={<Logout />}
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
             )}
           </Box>
         </Box>

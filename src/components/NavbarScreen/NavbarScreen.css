@@ -46,33 +46,88 @@
 
 /* Responsive visibility */
 /* Default: assume desktop styles off until breakpoints apply */
-.desktop-nav { display: none; }
-.mobile-nav-trigger { display: none; }
-.desktop-only { display: none; }
+.desktop-nav {
+    display: none;
+}
+
+.mobile-nav-trigger {
+    display: none;
+}
+
+.desktop-only {
+    display: none;
+}
 
 /* Mobile and tablets (<=1023px): show hamburger, hide desktop items */
 @media (max-width: 1023.98px) {
-  .mobile-nav-trigger { display: inline-flex !important; }
-  .desktop-nav { display: none !important; }
-  .desktop-only { display: none !important; }
+    .mobile-nav-trigger {
+        display: inline-flex !important;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
 }
 
 /* Desktop (>=1024px): hide hamburger, show desktop items */
 @media (min-width: 1024px) {
-  .desktop-nav { display: flex !important; }
-  .mobile-nav-trigger { display: none !important; }
-  .desktop-only { display: inline-flex !important; }
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    .mobile-nav-trigger {
+        display: none !important;
+    }
+
+    .desktop-only {
+        display: inline-flex !important;
+    }
+}
+
+/* (>=900px): hide hamburger, show desktop items */
+@media (min-width: 900px) {
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    .mobile-nav-trigger {
+        display: none !important;
+    }
+
+    .desktop-only {
+        display: inline-flex !important;
+    }
+}
+
+/* (>=700px): hide hamburger, show desktop items */
+@media (min-width: 700px) {
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    .mobile-nav-trigger {
+        display: none !important;
+    }
+
+    .desktop-only {
+        display: inline-flex !important;
+    }
 }
 
 /* Minor tweaks on very small screens */
 @media (max-width: 360px) {
-  .navbar-title {
-    font-size: 1rem;
-  }
-  .logo {
-    width: 40px;
-    height: 40px;
-  }
+    .navbar-title {
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .sign-in-btn {
