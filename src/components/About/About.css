@@ -199,3 +199,9 @@
         font-size: 1rem;
     }
 }
+
+@media (max-width: 390px) {
+    .benefit-card {
+        width: 320px;
+    }
+}
