@@ -8,7 +8,7 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import DescriptionIcon from "@mui/icons-material/Description";
 import InsightsIcon from "@mui/icons-material/Insights";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import Navbar from "../NavbarScreen/NavbarScreen";
+import Navbar from "../NavbarScreen/NavbarScreen.jsx";
 
 const About = () => (
   <div>
@@ -20,7 +20,7 @@ const About = () => (
         seekers and their ideal roles.
       </p>
 
-      <div className="about-section about-mission-how">
+      <div className="about-section-one about-mission-how">
         <div className="about-card">
           <h2>Our Mission</h2>
           <p>

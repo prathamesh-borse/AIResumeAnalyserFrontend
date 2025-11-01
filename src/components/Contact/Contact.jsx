@@ -6,14 +6,14 @@ const ContactPage = () => {
   return (
     <div>
       <Navbar />
-      <div className="contact-page-container">
-        <main className="contact-content">
-          <h1 className="contact-heading">Contact Us</h1>
-          <p className="contact-subheading">
+      <div className="contact-page-container-upload">
+        <main className="contact-content-upload">
+          <h1 className="contact-heading-upload">Contact Us</h1>
+          <p className="contact-subheading-upload">
             We're here to help! Reach out with any questions or feedback.
           </p>
 
-          <form className="contact-form">
+          <form className="contact-form-upload">
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -52,7 +52,7 @@ const ContactPage = () => {
             </button>
           </form>
 
-          <p className="email-link-text">
+          <p className="email-link-text-upload">
             Or email us directly at
             <a
               href="mailto:prathameshborse.official@gmail.com"

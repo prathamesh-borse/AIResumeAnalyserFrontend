@@ -9,16 +9,15 @@ body {
     color: #333;
 }
 
-.contact-page-container {
+.contact-page-container-upload {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
 }
 
 /* --- Header Styles --- */
-.header-nav {
+.header-nav-uploads {
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -28,7 +27,7 @@ body {
     box-sizing: border-box;
 }
 
-.logo-container {
+.logo-container-upload {
     display: flex;
     align-items: center;
     font-size: 1.25rem;
@@ -36,17 +35,17 @@ body {
     color: #2c3e50;
 }
 
-.logo-icon {
+.logo-icon-upload {
     margin-right: 0.5rem;
     color: #3498db;
 }
 
-.nav-links {
+.nav-links-upload {
     display: flex;
     gap: 2.5rem;
 }
 
-.nav-link {
+.nav-link-upload {
     text-decoration: none;
     color: #555;
     font-size: 1rem;
@@ -54,16 +53,16 @@ body {
     transition: color 0.2s ease;
 }
 
-.nav-link:hover {
+.nav-link-upload:hover {
     color: #3498db;
 }
 
-.nav-link.active {
+.nav-link-upload.active {
     color: #3498db;
     position: relative;
 }
 
-.nav-link.active::after {
+.nav-link-upload.active::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -73,7 +72,7 @@ body {
     background-color: #3498db;
 }
 
-.user-icons .icon {
+.user-icons-upload .icon-upload {
     font-size: 1.5rem;
     color: #555;
     cursor: pointer;
@@ -81,12 +80,12 @@ body {
     transition: color 0.2s ease;
 }
 
-.user-icons .icon:hover {
+.user-icons-upload .icon-upload:hover {
     color: #3498db;
 }
 
 /* --- Main Content and Form Styles --- */
-.contact-content {
+.contact-content-upload {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +96,7 @@ body {
     text-align: center;
 }
 
-.contact-heading {
+.contact-heading-upload {
     font-size: 2.5rem;
     font-weight: 600;
     margin-top: 0.3rem;
@@ -105,13 +104,13 @@ body {
     color: #2c3e50;
 }
 
-.contact-subheading {
+.contact-subheading-upload {
     font-size: 1rem;
     color: #666;
     margin-bottom: 1rem;
 }
 
-.contact-form {
+.contact-form-upload {
     width: 100%;
     display: flex;
     flex-direction: column;

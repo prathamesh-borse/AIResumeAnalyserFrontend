@@ -17,11 +17,26 @@ body,
 
 /* Footer styling */
 .app-footer {
-    padding: 20px;
+    padding: 8px;
     text-align: center;
     color: #555;
     background-color: #fff;
     border-top: 1px solid #eee;
     margin-top: auto;
     /* ensures footer stays at bottom */
+}
+
+.special-footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.special-footer-copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.20rem;
+    font-size: 0.85rem;
+    color: #64748B;
 }

@@ -21,7 +21,7 @@
     margin-bottom: 42px;
 }
 
-.about-section.about-mission-how {
+.about-section-one.about-mission-how {
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -141,7 +141,7 @@
 }
 
 @media (max-width: 900px) {
-    .about-section.about-mission-how {
+    .about-section-one.about-mission-how {
         flex-direction: column;
         gap: 18px;
     }

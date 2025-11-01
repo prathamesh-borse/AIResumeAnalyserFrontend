@@ -10,6 +10,7 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
+import Footer from "../Footer/Footer";
 
 function UploadSection({ onAnalyze, setLoading }) {
   const [resumeFile, setResumeFile] = useState(null);
@@ -164,6 +165,7 @@ function UploadSection({ onAnalyze, setLoading }) {
           </Card>
         </Container>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -4,16 +4,11 @@ import UploadSection from "./components/UploadSection/UploadSection";
 import ResultsScreen from "./components/ResultScreen/ResultsScreen";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoadingSpinner from "./components/LoadingScreen/LoadingSpinner";
 import AuthScreen from "./components/AuthScreen/AuthScreen";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -30,7 +25,7 @@ function App() {
                 path="/upload"
                 element={
                   <ProtectedRoute>
-                    <UploadSection setLoading={setLoading} fghrtegfer />
+                    <UploadSection setLoading={setLoading} />
                   </ProtectedRoute>
                 }
               />
@@ -48,12 +43,11 @@ function App() {
                 path="/auth"
                 element={<AuthScreen setLoading={setLoading} />}
               />
-              <Route path="/" element={<Navigate to="/upload" />} />
+              <Route path="/" element={<LandingPage />} />
             </Routes>
           </main>
         )}
       </div>
-      <Footer hide={loading} />
     </Router>
   );
 }

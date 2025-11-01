@@ -16,10 +16,13 @@ export default function Footer({ hide }) {
   }
 
   return (
-    <div className="app-footer-container">
-      <footer className="app-footer">
+    <div className="app-footer">
+      <div className="special-footer-logo">
         Built with ❤️ using Spring Boot + React + AI
-      </footer>
+      </div>
+      <div className="special-footer-copyright">
+        © {new Date().getFullYear()} SkillMatch AI. All rights reserved.
+      </div>
     </div>
   );
 }

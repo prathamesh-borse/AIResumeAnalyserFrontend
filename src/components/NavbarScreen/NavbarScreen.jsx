@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
-import "./NavbarScreen.css";
 import {
   IconButton,
   Drawer,
@@ -11,7 +10,7 @@ import {
   Divider,
   Box,
   ListItemIcon,
-  Button,
+  Button as MuiButton,
 } from "@mui/material";
 import {
   Logout,
@@ -20,121 +19,192 @@ import {
   Info,
   ContactPage,
   Assessment,
+  Star,
+  Build,
+  CloudUpload,
 } from "@mui/icons-material";
+import "../LandingPage/LandingPage.css"; // Import your new CSS
 
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { auth, logout } = useContext(AuthContext); // consume context
-  // const [menuOpen, setMenuOpen] = useState(false);
+  const { auth, logout } = useContext(AuthContext);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const isResultsScreen = location.pathname === "/results";
-
-  // helper to highlight active tab
-  const isActive = (path) =>
-    location.pathname === path ? "active-link" : "text-slate-600";
-
-  const handleNavigateToAuthScreen = () => {
-    navigate("/auth");
-  };
+  const isLandingPage = location.pathname === "/";
 
   const handleLogout = () => {
     logout();
-    navigate("/auth"); // redirect to login after logout
+    // Slight delay to ensure auth context updates before redirect
+    setTimeout(() => {
+      navigate("/", { replace: true });
+    }, 0);
   };
 
   const toggleMobile = (open) => () => setMobileOpen(open);
 
-  return (
-    <header className="w-full h-16 flex items-center justify-between border-b border-slate-200 bg-white px-4 md:px-8 box-shadow navbar-sticky">
-      {/* Logo + Title */}
-      <div className="flex flex-nowrap items-center gap-3 text-slate-800">
-        <svg className="text-[#137fec] logo" fill="none" viewBox="0 0 48 48">
-          <path
-            d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-            fill="currentColor"
-          />
-        </svg>
-        <h2 className="navbar-title text-style text-slate-900 text-xl font-bold">
-          SkillMatch AI
-        </h2>
-      </div>
+  // Scroll to section on landing page or navigate to landing page then scroll
+  const handleNavClick = (path, sectionId) => (e) => {
+    e.preventDefault();
 
-      {/* Desktop Menu */}
-      <nav className="desktop-nav items-center gap-6 menu-style">
-        <Link
-          className={`${isActive(
-            "/"
-          )} hover:text-[#137fec] text-sm font-medium leading-normal`}
-          to="/"
-        >
-          Home
-        </Link>
+    // If it's a section link and we're on landing page
+    if (sectionId && isLandingPage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
 
-        {isResultsScreen && (
-          <Link
-            className={`${isActive(
-              "/results"
-            )} hover:text-[#137fec] text-sm font-medium leading-normal`}
-            to="/results"
+    // If it's a section link but we're NOT on landing page
+    if (sectionId && !isLandingPage) {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return;
+    }
+
+    // Otherwise, just navigate
+    if (path) {
+      navigate(path);
+    }
+  };
+
+  const Logo = () => (
+    <div
+      className="nav-logo"
+      onClick={handleNavClick("/", null)}
+      style={{ cursor: "pointer" }}
+    >
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+          fill="#137fec"
+        />
+      </svg>
+      <span className="nav-logo-text">SkillMatch AI</span>
+    </div>
+  );
+
+  const AuthRight = () => {
+    if (auth?.token) {
+      const name = auth.user?.name || "User";
+      const initials = name
+        .split(" ")
+        .map((n) => n[0])
+        .slice(0, 2)
+        .join("")
+        .toUpperCase();
+
+      return (
+        <div className="nav-actions desktop-only">
+          <div className="user-avatar">{initials}</div>
+          <button
+            onClick={handleLogout}
+            className="btn btn-outline logout-btn"
+            style={{ padding: "0.5rem 0.75rem" }}
           >
-            Resume Analysis
-          </Link>
-        )}
+            <Logout style={{ width: "18px", height: "18px" }} />
+          </button>
+        </div>
+      );
+    }
 
-        <Link
-          className={`${isActive(
-            "/about"
-          )} hover:text-[#137fec] text-sm font-medium leading-normal`}
-          to="/about"
-        >
-          About
-        </Link>
-        <Link
-          className={`${isActive(
-            "/contact"
-          )} hover:text-[#137fec] text-sm font-medium leading-normal`}
-          to="/contact"
-        >
-          Contact
-        </Link>
-      </nav>
+    return (
+      <div className="nav-actions desktop-only">
+        <button className="btn btn-outline" onClick={() => navigate("/auth")}>
+          Sign In
+        </button>
+        <button className="btn btn-primary" onClick={() => navigate("/auth")}>
+          Get Started
+        </button>
+      </div>
+    );
+  };
 
-      {/* Actions */}
-      <div className="flex items-center gap-4 logout-style">
-        {/* Mobile hamburger */}
+  return (
+    <>
+      <header className="navbar">
+        <Logo />
+
+        {/* Desktop Navigation */}
+        <nav className="nav-links">
+          <a href="#home" onClick={handleNavClick("/", null)}>
+            Home
+          </a>
+
+          {auth?.token && (
+            <a href="/upload" onClick={handleNavClick("/upload", null)}>
+              Upload Resume
+            </a>
+          )}
+
+          {isLandingPage && (
+            <>
+              <a href="#features" onClick={handleNavClick(null, "features")}>
+                Features
+              </a>
+              <a
+                href="#how-it-works"
+                onClick={handleNavClick(null, "how-it-works")}
+              >
+                How It Works
+              </a>
+            </>
+          )}
+
+          {isResultsScreen && (
+            <a href="/results" onClick={handleNavClick("/results", null)}>
+              Resume Analysis
+            </a>
+          )}
+
+          <a
+            href={isLandingPage ? "#about" : "/about"}
+            onClick={
+              isLandingPage
+                ? handleNavClick(null, "about")
+                : handleNavClick("/about", null)
+            }
+          >
+            About
+          </a>
+          <a
+            href={isLandingPage ? "#contact" : "/contact"}
+            onClick={
+              isLandingPage
+                ? handleNavClick(null, "contact")
+                : handleNavClick("/contact", null)
+            }
+          >
+            Contact
+          </a>
+        </nav>
+
+        {/* Desktop Auth Actions */}
+        <AuthRight />
+
+        {/* Mobile Hamburger */}
         <IconButton
           className="mobile-nav-trigger"
           aria-label="menu"
           onClick={toggleMobile(true)}
+          sx={{ display: { xs: "flex", md: "none" } }}
         >
           <MenuIcon />
         </IconButton>
-        {!auth.token ? (
-          <button
-            className="button-21 desktop-only"
-            onClick={handleNavigateToAuthScreen}
-          >
-            Get Started
-          </button>
-        ) : (
-          <>
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0MTHR08RYrY5Ef2VcfyZ-Hn3DnI2miNmU3ObJ_02hP4oM3lXis6W5OhuES_FgCIEHRYdva182pHywKxrQy_oISXr3m6Zpcky7BIMPwsJXY7Tj2PhMsBv9K6EwhpUXMh6W_HHu6V5JZgv7yoPY5nBQwcCwOgrlKpyNHfCFbWZy3VweebiwkKP11xr73PqbkW8I8-5PnEgczLhjdmr0nJkTX7P9mXHk4Z6zS9pEfhPmHFZLX7igdGR6Loqg2jl93GcObpMHrHF-MsUu"
-              alt="User"
-              className="profile-avatar desktop-only"
-            />
-            <IconButton
-              aria-label="Logout"
-              onClick={handleLogout}
-              className="logout-btn desktop-only"
-            >
-              <Logout />
-            </IconButton>
-          </>
-        )}
-      </div>
+      </header>
 
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={mobileOpen} onClose={toggleMobile(false)}>
@@ -151,6 +221,52 @@ export default function Navbar() {
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItemButton>
+
+            {auth?.token && (
+              <ListItemButton onClick={() => navigate("/upload")}>
+                <ListItemIcon>
+                  <CloudUpload />
+                </ListItemIcon>
+                <ListItemText primary="Upload Resume" />
+              </ListItemButton>
+            )}
+
+            {isLandingPage && (
+              <>
+                <ListItemButton
+                  onClick={() => {
+                    toggleMobile(false)();
+                    setTimeout(() => {
+                      const element = document.getElementById("features");
+                      if (element)
+                        element.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                >
+                  <ListItemIcon>
+                    <Star />
+                  </ListItemIcon>
+                  <ListItemText primary="Features" />
+                </ListItemButton>
+
+                <ListItemButton
+                  onClick={() => {
+                    toggleMobile(false)();
+                    setTimeout(() => {
+                      const element = document.getElementById("how-it-works");
+                      if (element)
+                        element.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                >
+                  <ListItemIcon>
+                    <Build />
+                  </ListItemIcon>
+                  <ListItemText primary="How It Works" />
+                </ListItemButton>
+              </>
+            )}
+
             {isResultsScreen && (
               <ListItemButton onClick={() => navigate("/results")}>
                 <ListItemIcon>
@@ -159,42 +275,82 @@ export default function Navbar() {
                 <ListItemText primary="Resume Analysis" />
               </ListItemButton>
             )}
-            <ListItemButton onClick={() => navigate("/about")}>
+
+            <ListItemButton
+              onClick={() => {
+                if (isLandingPage) {
+                  toggleMobile(false)();
+                  setTimeout(() => {
+                    const element = document.getElementById("about");
+                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                } else {
+                  navigate("/about");
+                }
+              }}
+            >
               <ListItemIcon>
                 <Info />
               </ListItemIcon>
               <ListItemText primary="About" />
             </ListItemButton>
-            <ListItemButton onClick={() => navigate("/contact")}>
+
+            <ListItemButton
+              onClick={() => {
+                if (isLandingPage) {
+                  toggleMobile(false)();
+                  setTimeout(() => {
+                    const element = document.getElementById("contact");
+                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                } else {
+                  navigate("/contact");
+                }
+              }}
+            >
               <ListItemIcon>
                 <ContactPage />
               </ListItemIcon>
               <ListItemText primary="Contact" />
             </ListItemButton>
           </List>
+
           <Divider />
+
           <Box sx={{ p: 2 }}>
             {!auth.token ? (
-              <Button
+              <MuiButton
                 fullWidth
                 variant="contained"
-                onClick={handleNavigateToAuthScreen}
+                sx={{
+                  backgroundColor: "#1E90FF",
+                  "&:hover": { backgroundColor: "#1873CC" },
+                }}
+                onClick={() => navigate("/auth")}
               >
                 Get Started
-              </Button>
+              </MuiButton>
             ) : (
-              <Button
+              <MuiButton
                 fullWidth
                 variant="outlined"
                 startIcon={<Logout />}
+                sx={{
+                  borderColor: "#1E90FF",
+                  color: "#1E90FF",
+                  "&:hover": {
+                    borderColor: "#1873CC",
+                    backgroundColor: "rgba(30, 144, 255, 0.04)",
+                  },
+                }}
                 onClick={handleLogout}
               >
                 Logout
-              </Button>
+              </MuiButton>
             )}
           </Box>
         </Box>
       </Drawer>
-    </header>
+    </>
   );
 }
