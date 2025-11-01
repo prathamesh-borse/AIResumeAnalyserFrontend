@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SkillMatch AI",
+  "name": "An AI-powered platform to match job descriptions with candidate resumes",
   "icons": [
     {
       "src": "favicon.ico",
