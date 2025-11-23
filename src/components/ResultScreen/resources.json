@@ -383,5 +383,17 @@
             "description": "Official reference guide for Spring MVC framework.",
             "url": "https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc"
         }
+    ],
+    "Data Structures": [
+        {
+            "title": "Data Structures Tutorial",
+            "description": "Learn fundamental data structures and algorithms.",
+            "url": "https://www.geeksforgeeks.org/data-structures/"
+        },
+        {
+            "title": "Data Structures and Algorithms in Java",
+            "description": "Comprehensive guide to data structures and algorithms using Java.",
+            "url": "https://www.udemy.com/course/data-structures-and-algorithms-in-java/"
+        }
     ]
 }
